@@ -88,6 +88,14 @@ move_down={
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_navigation/layer_1="Corridors"
+2d_navigation/layer_2="Stairs"
+2d_navigation/layer_3="Rooms"
+2d_navigation/layer_4="Immovables"
+2d_navigation/layer_5="Walls"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://btwaepqiv2se5"]
+
+[ext_resource type="Script" uid="uid://canqatbo2cjug" path="res://user/user.gd" id="1_pp7oj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_swgx3"]
+radius = 64.0
+
+[node name="User" type="CharacterBody2D"]
+script = ExtResource("1_pp7oj")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+simplify_path = true
+simplify_epsilon = 10.0
+avoidance_enabled = true
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0.0980392, 0.133333, 1, 1)
+debug_path_custom_line_width = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_swgx3")
+
+[node name="PathFinderTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="PathFinderTimer" to="." method="_on_timer_timeout"]
